@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title> Hello, jQuery! </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            .parent{
+                margin-left: .8em;
+            }
+            .child{
+                margin-left: 1.6em;
+            }
+        </style>
+
+    <head>
+    <body>
+        <div style = "color:black" id = "target">
+            Grandparent
+            <div style = "color:black" class = "parent" >
+                -Parent
+                <div style = "color:black" class = "child">-First Child </div>
+                <div style = "color:black" id = "demo" class = "child">-Second Child </div>
+            </div>
+        </div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //Will execute when the page is ready
+
+                //will locate all direct children
+
+                //first locator will give the element with an id of target
+
+                //second locator(method) will get me all direct children
+                
+                //the attr method will update an attribute
+               //$("#target").children().attr('style', 'color:red');
+               //find always wants a selector
+               // $("#target").find('*').attr('style', 'color:red');
+               //finds the parent of the id with demo 
+              // $('#demo').parent().attr('style', "color:red");
+              //finds the parents of the id with demo all the way to grandparents
+              $('#demo').parents().attr('style', "color:red");
+            });
+        </script>
+    </body>
+</html>

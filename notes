@@ -1,0 +1,29 @@
+Attribute based selectors:
+
+<h1> custom = "banner"> Hello, world</h1>
+    $('h1[custom="banner"]')
+
+the above selects all h1's with the atrribute 'custom' and the value of "banner"
+
+STARTS WITH:
+
+<h1 class = "col-md-5" Hello, World!</h1>
+
+
+BEGINS WITH:
+$('h1[class^="col"]')
+
+allows you to get all h1s with classes beginning with col
+
+CONTAINS:
+$('h1[class*="col"]')
+
+allows you to see if it contains a particular value
+
+SELECT ELEMENTS BASED ON POSITION:
+
+PARENT/CHILD
+$('nav > a')
+
+Descendants 
+$('nav a')
