@@ -11,7 +11,7 @@
          }
         </style>
 
-    <head>
+    </head>
     <body>
         <div style = "color:black"> First </div>
         <div style = "color:black"> Second </div>
@@ -25,18 +25,26 @@
         <script>
             $(function(){
                 //will execute when the page is ready
+
                 //PREVIOUS ELEMENTS
+
                 //prev(optionalSelector) retrieves the previous element on the same level
                 //$('#target').prev().attr('style', 'color:red');
+
                 //prevAll(optionalSelector) retrieves all previous elements on the same level
-                $('#target').prevAll().attr('style', 'color:red');
+                //$('#target').prevAll().attr('style', 'color:red');
+
                 //prevUntil(selector, node or jQuery object) retrieves all previous ele on the same level up to but not including the element the selector matches
                 //$('#target').prevUntil('.stop').attr('style', 'color:red');
+
                 //NEXT ELEMENTS
+
                 //next(optionalSelector) retrieves the next element on the same level
                 // $('#target').next().attr('style', 'color:red');
+
                 //nextAll(optionalSelector) retrieves the next elements on the same level
                 //$('#target').nextAll().attr('style', 'color:red');
+                
                 //nextUntil(selector, node or jquery object) retrieves all next elements on the same level, up to but not including the element the selector matches 
                 $('#target').nextUntil('.stop').attr('style', 'color:red');
             });

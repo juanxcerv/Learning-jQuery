@@ -1,0 +1,69 @@
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <style>
+  body {
+   font-family: Verdana;
+  }
+  h1, h2, h3 {
+   color: darkblue;
+  }
+  .rating-circle {
+   height: 2em;
+   width: 2em;
+   border: .1em solid black;
+   border-radius: 1.1em;
+   display: inline-block;
+   margin: 0;
+   padding: .1em;
+  }
+
+  .rating-hover {
+   background-color: yellow;
+  }
+
+  .rating-chosen {
+   background-color: green;
+  }
+ </style>
+
+</head>
+
+<body>
+ <h1>Contoso Web Developer Conference</h1>
+ <h2>Finding elements using jQuery</h2>
+ <p>This session is about identifying elements using jQuery methods and selectors.</p>
+ <h3>Rate this session</h3>
+ <div id="rating-container">
+  <div class="rating-circle"></div>
+  <div class="rating-circle"></div>
+  <div class="rating-circle"></div>
+  <div class="rating-circle"></div>
+  <div class="rating-circle"></div>
+  <div id = "stop"> </div>
+ </div>
+
+ <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+
+ <script>
+        // your answer would go here
+       $(function(){
+            $( ".rating-circle" ).click( function() {
+                $(this).addClass('rating-chosen');
+                $(this).prevUntil('h3').addClass( "rating-chosen" );
+                $(this).nextUntil("#stop").removeClass('rating-chosen');
+                });
+            $( ".rating-circle" ).hover( function() {
+                $(this).addClass('rating-hover');
+                $(this).prevUntil('h3').addClass( "rating-hover" );
+                //$(this).removeClass('rating-chosen');
+                //$(this).prevUntil('h3').removeClass( "rating-chosen" );
+                },
+                function() {
+                $(this).removeClass('rating-hover');
+                $(this).prevUntil('h3').removeClass( "rating-hover" );
+                });
+        });
+ </script>
+</body>
+</html>

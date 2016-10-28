@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title> Hello, jQuery! </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            .red {
+                color: red;
+            }
+            .blue {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "target">
+            Demo Element
+        </div>
+        <div id = "display">
+            Another demo element!
+        </div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+
+                //$('#target').click(function() {
+                    //click()
+                    //$('#display').text('Div was clicked');
+                    
+                //})
+
+                //$('div').click(function() {
+                    //this is the **Dom element** of the item that raised the event convert to jQuery object
+                    //$(this).text('Clicked!');
+                //})
+                $('#target').click(function(event){
+                    output = "User clicked on " + event.pageX + '/' + event.pageY;
+                    $('#display').text(output);
+                });
+                
+            });
+        </script>
+    </body>
+</html>
