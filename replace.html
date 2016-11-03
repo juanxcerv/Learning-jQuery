@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            .red {
+                color : red;
+            }
+            .btn {
+                font-size: .7em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2> Replace </h2>
+
+        <div> <button type = "button" class = "btn" id = "executor">Execute!</button></div>
+
+        <div id = "target">
+            First Line
+        </div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+                // replaces the html content with what is put below
+                //empty() will empty out the contents of an html element, remove() erases it all
+                $('#executor').click(function(){
+                    $('#target').replaceWith('<div class = "red"> New Content </div>');
+                });
+            });
+        </script>
+    </body>
+</html>

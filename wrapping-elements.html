@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            .red {
+                color:red;
+            }
+            .btn {
+                font-size: 1em;
+                margin-top: -30;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3> Wrapping </h3>
+        <div> <button type = "button" class = "btn" id = "target">execute</button></div>
+
+        <div class = "wrap-me"> First line </div>
+        <div class = "wrap-me"> Second line </div>
+        
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+                $('#target').click(function() {
+                //wrap() surrounds each matched element with the new element (individually)
+                $('.wrap-me').wrap('<div class = "red"></div>');
+                //wrapAll() surrounds all matched elements with the new element on the outside of all of them , not individually
+                //$('.wrap-me').wrapAll('<div class = "red"></div>');
+                //wrapInner() surrounds all child elements with the new element
+                //$('.wrap-me').wrapInner('<div class = "red"></div>');
+                });
+            });
+        </script>
+    </body>
+</html>

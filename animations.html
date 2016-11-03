@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            div {
+                margin-top: .1em;
+            }
+            button {
+                font-size: 1em;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+
+        <div> 
+            <label>Name: </label>
+            <input type = "text" />
+        </div>
+
+        <button type="button" id="show-additional-information"> Show additional information </button>
+
+        <div id ="additional-information" class = "hidden">
+            <label> Additional Information </label>
+            <input type = "text" />
+        </div>
+
+        </form>
+
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+                //$('#btn-toggle').click(function() {
+		        // animation will take one second
+		        //$('#target').toggle(1000);
+	            //});
+                 $('#show-additional-information').click(function() {
+                 $('#additional-information').show(750);
+                 });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            .btn {
+                font-size: 1em;
+            }
+            .red {
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div><button type = "button" class = "btn" id = "target">execute</button>
+        </div>
+        <div id = "display" class= "red"> 
+            This content was already here!
+        </div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+
+
+                //$('#target').one('click', function() {
+                    //add the content to the beginning of the Element
+                    //$(target).prepend(newContent)
+                    //$('#display').prepend('<div>This is at the beginning</div>');
+
+                    //add the content to the end of the Element
+                    //$(target).append(newContent)
+                    //$('#display').append('<div>This is at the end</div>');
+                //});
+
+                //before and after makes modifications on the outside and prepend/append do it inside the target element
+                $('#target').one('click', function() {
+                    //add content to the beginning
+                    $('#display').before('<div>This is at the beginning</div>');
+
+                    //add the content to the end of the Element
+                    //$(target).after(newContent)
+                    $('#display').after('<div>This is at the end</div>');
+                });
+            });
+        </script>
+    </body>
+</html>

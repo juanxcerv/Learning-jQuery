@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            button {
+                font-size: 1em;
+                margin-top: .1em;
+                color: #F00FFF;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div><button type = "button" class = "btn" id = "creator"> Create New Button</button></div>
+            <div><button type = "button" class = "btn updater">Existing Button</button></div>
+            <div id = "target"></div>
+        </form>
+        <div id = "display"></div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+               $('#creator').click(function() {
+                   $('#target').html('<button type = "button" class = "btn updater">New Button</button>');
+               });
+               //$('button.updater').click(function() {
+                 //  $('#display').text($(this).text() + ' was clicked.');
+               //});
+
+               //will add event handler to all future objects inside the form with a type of button and class of updater , using 
+               //click event
+               //uses parent as first selector then applies to first argument selector
+               //$('form').delegate('button.updater', 'click', function() {
+                  // $('#display').text($(this).text() + ' was clicked.');
+               //});
+               //only executes once
+               $('button.updater').one('click', function() {
+                   $('#display').text($(this).text() + ' was clicked.');
+               });
+            });
+        </script>
+    </body>
+</html>

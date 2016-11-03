@@ -1,3 +1,6 @@
+Microsoft: DEV208x Introduction to jQuery
+
+
 Attribute based selectors:
 
 <h1> custom = "banner"> Hello, world</h1>
@@ -33,7 +36,7 @@ $('nav a')
 
 <html>
     <head>
-        <title> Hello, jQuery! </title>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
         <meta charset = "UTF-8" />
         <style> 
             body {
@@ -42,12 +45,7 @@ $('nav a')
             div {
                 margin-top: .1em;
             }
-            .red {
-                color: red;
-            }
-            .blue {
-                color: blue;
-            }
+
         </style>
     </head>
     <body>
@@ -62,3 +60,28 @@ $('nav a')
         </script>
     </body>
 </html>
+
+Modifying ELEMENTS
+to retrieve value of an input control call on val
+
+var value = $('#some-inout-control').val();
+
+you can set values by passing in an argument to the val() call
+
+WORKING WITH CSS
+If you want to retrieve the value of a CSS property, you call css(property).
+// Retrieve an item's color
+var color = $('#target').css('color');
+
+if you wish to set a property, call css(property, newValue)
+
+// Change an item's color to red
+$('#target').css('color', 'red');
+
+//update multiple ones
+var style = {
+	color: 'red',
+	backgroundColor: yellow
+};
+
+$('#target').css(style);

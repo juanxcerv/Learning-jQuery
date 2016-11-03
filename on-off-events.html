@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 20px;
+            }
+            .btn {
+                margin-top: .4em;
+                font-size: 1em;
+            }
+            
+        </style>
+    </head>
+    <body`>
+       <form>
+           <div><button type = "button" class= "btn validate">First Button </button></div>
+           <div><button type = "button" class= "btn validate">Second Button </button></div>
+           <div><button type = "button" class= "btn">Third Button </button></div>
+           <div id ="display"> </div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+                $('form').on('click', 'button.validate', function() {
+                    $('#display').text('clicked!');
+                });
+                
+            });
+        </script>
+    </body>
+</html>

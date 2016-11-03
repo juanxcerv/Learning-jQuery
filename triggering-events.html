@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            button {
+                font-size: 1em;
+                margin-top: .1em;
+                color: #000FFF;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div><button type = "button" class = "btn updater">First</button></div>
+        <div><button type = "button" class = "btn updater">Second</button></div>
+        <div><button type = "button" class = "btn" id = "target">Execute Event Handlers</button></div>
+
+        <div id = "display"></div>
+
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+               //trigger executes the code but doesnt raise the event. lets you choose the events that you want
+               
+               //triggerHandler will call the code for the first matched element
+
+               $('button.updater').click(function(){
+                   var exisitingText = $('#display').text();
+                   var buttonText =  $(this).text();
+
+                   $('#display').text(exisitingText + '-' + buttonText);
+               });
+               $('#target').click(function(){
+                   //perform a click on those buttons
+                   //$('button.updater').click();
+
+                   //just execute the event handler code by using trigger
+                   //$('button.updater').trigger('click');
+
+                   //just execute the first one
+                   $('button.updater').triggerHandler('click');
+               });
+            });
+        </script>
+    </body>
+</html>

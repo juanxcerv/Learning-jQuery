@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title> Microsoft: DEV208x Introduction to jQuery </title>
+        <meta charset = "UTF-8" />
+        <style> 
+            body {
+                font-size: 32px;
+            }
+            div {
+                margin-top: .1em;
+            }
+            .red {
+                color : red;
+            }
+            .btn {
+                font-size: .7em;
+                margin-top: -40;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--<h2> Clone </h2>-->
+
+        <!--<div> <button type = "button" class = "btn" id = "executor">Execute!</button></div>
+
+        <div id = "dialog"> First Line </div>
+
+        <div id = "container">
+            
+        </div>-->
+        <button type="button" id="add-line">Add new line</button>
+        <div id="container">
+        <div class="user-entry">
+            <label>Email:</label>
+            <input type="email" />
+            <label>Password:</label>
+            <input type="password" />
+        </div>
+        </div>
+        <script src = './Scripts/jquery-3.1.1.min.js'> </script>
+        <script>
+            $(function(){
+                //will execute when page is ready
+                //find the dialog element , clone it and put it into a variable
+                //var $dialog = $('#dialog').clone();
+                //$dialog.removeAttr('id');
+                //$('#executor').click(function(){
+                    //each time we want a new instance, we need to clone it again
+                  //  $('#container').append($dialog.clone());
+                //});
+                $userForm = $('.user-entry').clone();
+                $userForm.css('display', 'none');
+                $('#add-line').click(function() {
+                    $newUserForm = $userForm.clone();
+                    $('#container').append($newUserForm);
+                    $newUserForm.show(750);
+                });
+            });
+        </script>
+    </body>
+</html>
